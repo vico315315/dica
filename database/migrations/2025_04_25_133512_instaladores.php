@@ -18,7 +18,7 @@ return new class extends Migration
             $table->engine="InnoDB";
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->int('cel');
+            $table->bigInterger('cel');
             $table->string('estado');
             $table->timestamps();
     }

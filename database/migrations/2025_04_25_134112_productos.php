@@ -14,6 +14,28 @@ return new class extends Migration
     public function up()
     {
         //
+
+       Schema::create('users', function (Blueprint $table) {
+           
+        $table->engine="InnoDB";
+        $table->bigIncrements('id');
+        
+        $table->bigInterger('instalador_id')->unsigned();
+
+        $table->string('nombre');
+        $table->string('codigo');
+        $table->bigInterger('cantidad');
+        $table->bigInterger('preciounit');
+        $table->bigInterger('preciototal');
+        $table->string('estado');
+        $table->string('obs');
+
+        $table->timestamps();
+
+        $table->foreign('instalador_id')->references('id')->on('instaladores')->onDelete("cascade");
+       });
+        
+
     }
 
     /**
